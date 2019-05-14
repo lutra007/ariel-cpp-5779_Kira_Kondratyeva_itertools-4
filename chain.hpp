@@ -1,8 +1,14 @@
 #pragma once
-#include <string>
-#include <sstream>
+#include <vector>
 
 namespace itertools {
-  template <typename Iterable>
-  std::string chain(const Iterable& iter1, const Iterable& iter2);
+    template <typename T>
+     std::vector<T> chain(T iter1, T iter2) {
+        std::vector<T> result;
+        for (auto i: iter1)
+            result.push_back(i);
+        for (auto i: iter2)
+            result.push_back(i);
+        return result;
+    };
 }
